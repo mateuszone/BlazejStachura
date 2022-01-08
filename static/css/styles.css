@@ -1,0 +1,265 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: 900;
+}
+
+span {
+    font-weight: bold;
+    text-decoration: solid;
+}
+
+hr.style18 {
+    height: 30px;
+    border-style: solid;
+    border-color: gold;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style18:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.title-paragraph {
+    padding-top: 30%;
+}
+
+/* Headings*/
+.big-heading {
+    font-family: 'Bungee Hairline', cursive;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* containers */
+.container-fluid {
+    padding: 7% 15%;
+}
+
+/* Sections */
+.photo-section {
+    background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/title.jpg");
+}
+
+
+.video-section {
+    background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/shuffling.jpg");
+}
+
+.footer-section {
+    max-height: 900px;
+    background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/catsFooter.jpg");
+}
+
+.partner-logo {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.colored-section {
+    background-color: #ff4c68;
+    color: #fff;
+}
+
+.white-section {
+    padding: 100px;
+    background-color: #fff;
+}
+
+/*Navigation Bar */
+
+.navbar {
+    padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.3rem;
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: 1000;
+}
+
+/*Download buttons*/
+
+.title-buttons {
+    margin: 5% 3% 5% 0;
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: 900;
+}
+
+/* Title Section*/
+
+#title .container-fluid {
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 3% 15% 7%;
+    color: #fff;
+}
+
+/* Personal info */
+.info-column {
+    padding-bottom: 50px;
+    border-radius: 25px;
+}
+
+.card {
+    /*border-radius: 10%;*/
+}
+
+/* wideo */
+iframe {
+    width: 560px;
+    height: 315px;
+}
+
+/* proof */
+
+#proof {
+    padding-bottom: 3%;
+    margin: auto;
+}
+
+.top-text {
+    margin-left: 15%;
+    text-align: left;
+}
+
+.bottom-text {
+    margin-right: 15%;
+    text-align: right;
+}
+
+/* Testimonial Section*/
+
+#testimonials {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.testimonial-text-up {
+    position: absolute;
+    top: 14%;
+    left: 20%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.testimonial-text-down {
+    position: absolute;
+    right: 20%;
+    bottom: 16%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.testimonial-image {
+    max-width: 1080px;
+    height: 500px;
+    /*border-radius: 100%;*/
+    margin: 20px;
+}
+
+/*footer*/
+.social-icon {
+    /*height: 300px;*/
+}
+
+@media screen and (max-width: 1020px) {
+    body {
+        font-family: 'Yusei Magic', sans-serif;
+        text-align: center;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        /*font-family: "Montserrat-Bold", sans-serif;*/
+        font-family: 'Bungee Hairline', cursive;
+        font-size: 1.3rem;
+        line-height: 1.1;
+    }
+
+    .title-paragraph {
+        padding-top: 0;
+    }
+
+    .photo-section {
+        background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/kostki.png");
+    }
+
+    .video-section {
+        background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/lewitacja.jpg");
+    }
+
+    iframe {
+        max-width: 320px;
+        max-height: 320px;
+    }
+
+    #testimonials {
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .testimonial-image {
+        max-width: 200px;
+        height: 300px;
+        /*border-radius: 100%;*/
+        margin: 20px;
+    }
+
+    .testimonial-text-up {
+        position: absolute;
+        top: 20%;
+        left: unset;
+    }
+
+    .testimonial-text-down {
+        position: absolute;
+        bottom: 21%;
+        right: unset;
+    }
+
+    .white-section {
+        padding: 50px;
+        background-color: #fff;
+    }
+
+    .big-heading-mobile {
+        font-family: 'Yusei Magic', sans-serif;
+        font-weight: 1;
+        font-size: 2rem;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+}
