@@ -8,3 +8,7 @@ class MainPage(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
 
+
+class ContactPage(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'Kontakt.html')

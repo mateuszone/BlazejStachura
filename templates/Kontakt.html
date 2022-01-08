@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Kontakt{% endblock title %}
+<body>
+{% block body %}
+<form method='post' name="ContactForm">
+    {% csrf_token %}
+    <label for="fname">Imię</label> <input type="text" placeholder="imie" name="first_name"></br>
+    <label for="fname">adres e-mail</label> <input type="text" placeholder="adres email" name="email"></br>
+    <label for="fname">telefon komórkowy</label> <input type="text" placeholder="telefon kontaktowy" name="tel"></br>
+    <label for="fname">miejsce pokazu</label> <input type="text" placeholder="miejsce pokazu" name="show_location"></br>
+    <label for="fname">Wiadomość</label> <input type="text" placeholder="wiadomość" name="message"></br>
+    <input type="submit" placeholder="Wyślij">
+</form>
+{% endblock body %}
+</body>
+</html>
