@@ -1,3 +1,4 @@
+/* general */
 body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -8,15 +9,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
 }
 
-span {
-    font-weight: bold;
-    text-decoration: solid;
-}
 
 hr.style18 {
     height: 30px;
     border-style: solid;
-    border-color: gold;
+    border-color: #000000;
     border-width: 1px 0 0 0;
     border-radius: 20px;
 }
@@ -32,50 +29,50 @@ hr.style18:before {
     border-radius: 20px;
 }
 
-.title-paragraph {
-    padding-top: 30%;
-}
-
-/* Headings*/
-.big-heading {
-    font-family: 'Bungee Hairline', cursive;
-    font-size: 3.5rem;
-    line-height: 1.5;
-    font-weight: 900;
-}
-
-.section-heading {
-    font-size: 3rem;
-    line-height: 1.5;
-}
-
 /* containers */
 .container-fluid {
     padding: 7% 15%;
 }
 
-/* Sections */
-.photo-section {
-    background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/title.jpg");
+.container-top {
+    padding-bottom: 7%;
 }
 
-
-.video-section {
-    background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/shuffling.jpg");
+/* Background-images-sections */
+.title-photo {
+    position: relative;
+    background-image: url("../static/images/title.jpg");
+    max-height: 700px;
 }
 
-.footer-section {
-    max-height: 900px;
-    background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/catsFooter.jpg");
+.title-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.33);
 }
 
-.partner-logo {
-    max-width: 300px;
-    max-height: 200px;
+.video-photo {
+    position: relative;
+    background-image: url("../static/images/stage.png");
 }
 
+.video-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* color and black/white sections */
 .colored-section {
-    background-color: #ff4c68;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -87,7 +84,8 @@ hr.style18:before {
 /*Navigation Bar */
 
 .navbar {
-    padding: 0 0 4.5rem;
+    /*padding: 0 0 4.5rem;*/
+    background-color: #000;
 }
 
 .navbar-brand {
@@ -105,14 +103,6 @@ hr.style18:before {
     font-weight: 1000;
 }
 
-/*Download buttons*/
-
-.title-buttons {
-    margin: 5% 3% 5% 0;
-    font-family: 'Bungee Hairline', cursive;
-    font-weight: 900;
-}
-
 /* Title Section*/
 
 #title .container-fluid {
@@ -123,7 +113,18 @@ hr.style18:before {
     color: #fff;
 }
 
-/* Personal info */
+.title-paragraph {
+    padding-top: 35%;
+    color: #fff;
+}
+
+.title-buttons {
+    margin: 5% 3% 5% 0;
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: 900;
+}
+
+/* info */
 .info-column {
     padding-bottom: 50px;
     border-radius: 25px;
@@ -133,27 +134,27 @@ hr.style18:before {
     /*border-radius: 10%;*/
 }
 
+span {
+    font-weight: bold;
+    text-decoration: solid;
+}
+
 /* wideo */
 iframe {
     width: 560px;
     height: 315px;
 }
 
-/* proof */
-
-#proof {
-    padding-bottom: 3%;
-    margin: auto;
+.big-heading {
+    font-family: 'Bungee Hairline', cursive;
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 900;
 }
 
-.top-text {
-    margin-left: 15%;
-    text-align: left;
-}
-
-.bottom-text {
-    margin-right: 15%;
-    text-align: right;
+#video p {
+    /*font-weight: bold;*/
+    color: #ffffff;
 }
 
 /* Testimonial Section*/
@@ -187,11 +188,38 @@ iframe {
     margin: 20px;
 }
 
+
 /*footer*/
 .social-icon {
     /*height: 300px;*/
 }
 
+.container-footer {
+    background-color: #000000;
+    /*padding-bottom: 2%;*/
+}
+
+.container-footer h5 {
+    padding-top: 2%;
+}
+
+.container-footer p {
+    color: #ffffff;
+}
+
+.container-footer h6 {
+    color: #ffffff;
+}
+
+.container-footer a {
+    color: #ffffff;
+}
+
+.container-footer i {
+    color: #ffffff;
+}
+
+/* Mobile Screen @media selector  */
 @media screen and (max-width: 1020px) {
     body {
         font-family: 'Yusei Magic', sans-serif;
@@ -206,15 +234,15 @@ iframe {
     }
 
     .title-paragraph {
-        padding-top: 0;
+        padding-top: 10%;
     }
 
-    .photo-section {
-        background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/kostki.png");
+    .title-photo {
+        background-image: url("../static/images/kostki.png");
     }
 
-    .video-section {
-        background-image: url("http://localhost:63342/Bootstrap100daysofCode/BlazejStachura/images/lewitacja.jpg");
+    .video-photo {
+        background-image: url("../static/images/lewitacja.jpg");
     }
 
     iframe {

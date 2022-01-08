@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +18,7 @@
     <!--    Css stylesheets-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 
     <!--    Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -38,8 +39,8 @@
 
 <body>
 
-<section id="title" class="photo-section">
-    <div class="container-fluid">
+<section id="title" class="title-photo">
+    <div class="container-top">
         <!-- Nav Bar -->
         <!--    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">-->
         <nav class="navbar  navbar-expand-lg navbar-dark">
@@ -76,7 +77,7 @@
 
             </div>
             <div class="col-lg-6">
-                <p class="title-paragraph">Pokaz iluzji z klasą! Dostarczam niezapomnianą rozrywkę na wydarzeniach
+                <p class="title-paragraph">Pokaz iluzji z klasą! Dostarczam niezapomnianą rozrywkę<br> na wydarzeniach
                     takich jak imprezy firmowe, prywatne, urodziny, wesela</p>
                 <button type="button" class="btn btn-outline-light btn-lg title-buttons"><i
                         class="fas fa-hat-wizard"></i>
@@ -145,91 +146,92 @@
     <hr class="style18">
 </section>
 <!-- Video -->
-<section id="video" class="video-section colored-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <iframe src="https://www.youtube.com/embed/uta2Yu3Y7uc"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+<section id="video" class="colored-section">
+    <div class="video-photo">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <iframe src="https://www.youtube.com/embed/uta2Yu3Y7uc"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <h4 class="big-heading big-heading-mobile">WYSTĘP NA WESELU</h4>
+                    <p>Tak wygląda występ na weselu, połączenie światowej klasy iluzji, dobrego klimatu oraz zabawna
+                        interakcja z goścmi.
+                    </p>
+                </div>
             </div>
-            <div class="col-lg-6 col-sm-12">
-                <h4 class="big-heading big-heading-mobile">WYSTĘP NA WESELU</h4>
-                <p>Tak wygląda występ na weselu, połączenie światowej klasy iluzji, dobrego klimatu oraz zabawna
-                    interakcja z goścmi.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <iframe src="https://www.youtube.com/embed/rMiga6aqfd8"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                <!--                <video src= controls>-->
-                <!--                    Your browser does not support the video tag.-->
-                <!--                </video>-->
-            </div>
-            <div class="col-lg-6">
-                <h4 class="big-heading big-heading-mobile">FRAGMENT Z IMPREZY HALLOWEENOWEJ</h4>
-                <p>Występ był specjalnie przygotowany dla młodszej publiczności, która może w nim aktywnie i wesoło
-                    uczestniczyć.
-                </p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <iframe src="https://www.youtube.com/embed/rMiga6aqfd8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <!--                <video src= controls>-->
+                    <!--                    Your browser does not support the video tag.-->
+                    <!--                </video>-->
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="big-heading big-heading-mobile">FRAGMENT Z IMPREZY HALLOWEENOWEJ</h4>
+                    <p>Występ był specjalnie przygotowany dla młodszej publiczności, która może w nim aktywnie i wesoło
+                        uczestniczyć.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Proof -->
+<!-- Testimonials -->
 <section id="testimonials" class="white-section">
     <!--    <div class="container-fluid">-->
 
     <hr class="style18">
     <h4 class="testimonial-text-up">WYSTĘPOWAŁEM JUŻ DLA:</h4>
 
-    <!--            <div class="col-sm-offset-1 col-sm-2 col-xs-12 partner-logo"><img src="images/logos/toastmasters.svg"/></div>-->
-    <!--    <div class="col-sm-2 col-xs-12 partner-logo"><img src="images/logos/campanile.svg"/></div>-->
     <div id="testimonial-carousel" class="carousel slide" data-interval="2500" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active container-fluid">
                 <!--                <h2 class="testimonial-text">Świat IT czasem przenika się ze światem magii.</h2>-->
-                <img class="testimonial-image" src="images/logos/google.svg" alt="dog-profile">
+                <img class="testimonial-image" src="{% static '/images/logos/google.svg' %}" alt="google">
                 <!--                <em>Google, Wrocław</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Bo w magii komunikacja jest bardzo ważna.</h2>-->
-                <img class="testimonial-image" src="images/logos/orange.svg" alt="toastmasters">
+                <img class="testimonial-image" src="{% static '/images/logos/orange.svg' %}" alt="orange">
                 <!--                <em>Orange, Warszawa</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Wyjątkowe miejsce i wyjątkowi ludzie.</h2>-->
-                <img class="testimonial-image" src="images/logos/toastmasters.svg" alt="toastmasters">
+                <img class="testimonial-image" src="{% static '/images/logos/toastmasters.svg' %}" alt="toastmasters">
                 <!--                <em>Orange, Warszawa</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Campanile to...........</h2>-->
-                <img class="testimonial-image" src="images/logos/campanile.svg" alt="campanile">
+                <img class="testimonial-image" src="{% static '/images/logos/campanile.svg' %}" alt="campanile">
                 <!--                <em>Campanile, Wrocław</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Estyma to...........</h2>-->
-                <img class="testimonial-image" src="images/logos/estyma.png" alt="estyma">
+                <img class="testimonial-image" src="{% static '/images/logos/estyma.png' %}" alt="estyma">
                 <!--                <em>Estyma, Kraków</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Estyma to...........</h2>-->
-                <img class="testimonial-image" src="images/logos/dworTomaszewice.svg" alt="dwor-tomaszewice">
+                <img class="testimonial-image" src="{% static '/images/logos/dworTomaszewice.svg' %}"
+                     alt="dwor-tomaszewice">
                 <!--                <em>Dwór Tomaszewice, okolice Krakowa</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Grid DYnamics to...........</h2>-->
-                <img class="testimonial-image" src="images/logos/gridDinamics.jpg" alt="grid-dynamics">
+                <img class="testimonial-image" src="{% static '/images/logos/gridDynamics.jpg' %}" alt="grid-dynamics">
                 <!--                <em>Grid DYnamics, gdzies tam</em>-->
             </div>
             <div class="carousel-item container-fluid">
                 <!--                <h2 class="testimonial-text">Teltech to...........</h2>-->
-                <img class="testimonial-image" src="images/logos/teltech.png" alt="teltech">
+                <img class="testimonial-image" src="{% static '/images/logos/teltech.png' %}" alt="teltech">
                 <!--                <em>TpTeltech,Łódz</em>-->
             </div>
         </div>
@@ -246,40 +248,164 @@
     <hr class="style18">
 </section>
 
-<!--    <div class="col-lg-2 partner-logo"><img src="images/logos/toastmasters.svg"/></div>-->
-<!--    <div class="col-lg-2 partner-logo"><img src="images/logos/google.svg"/></div>-->
-<!--            <div class="col-lg-2 partner-logo"><img src="images/logos/google.svg"/></div>-->
-<!--            <div class="col-lg-2 partner-logo"><img src="images/logos/dworTomaszewice.svg"/></div>-->
-<!--            <div class="col-lg-2 partner-logo"><img src="images/logos/estyma.png"/></div>-->
-<!--            <div class="col-lg-2 partner-logo"><img src="images/logos/gridDinamics.jpg"/></div>-->
-<!--            <div class="col-lg-2 partner-logo"><img src="images/logos/orange.svg"/></div>-->
-<!--            <div class="col-lg-2 partner-logo"><img src="images/logos/teltech.png"/></div>-->
-<!--        </div>-->
-<!--        <img class="press-logo" src="images/proof.png" alt="tc-logo">-->
+{#<footer id="footer" class="colored-section">#}
+{#    <div class="container-footer">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-12 feature-box">#}
+{#                <i class="social-icon fab fa-facebook fa-4x"></i>#}
+{#            </div>#}
+{#            <div class="col-lg-3 feature-box">#}
+{#                <i class="social-icon fab fa-youtube fa-4x"></i>#}
+{#            </div>#}
+{#            <div class="col-lg-3 feature-box">#}
+{#                <i class="social-icon fab fa-instagram fa-4x"></i>#}
+{#            </div>#}
+{#            <div class="col-lg-3 feature-box">#}
+{#                <i class="social-icon fas fa-envelope fa-4x"></i>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <h5>©2022 Błażej Stachura.</h5>#}
+{#    </div>#}
+{#</footer>#}
 <!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4 container-footer">
 
-<footer id="footer" class="colored-section footer-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 feature-box">
-                <i class="social-icon fab fa-facebook fa-8x"></i>
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Błażej Stachura</h6>
+                <p>Pomyślała z rozgoryczeniem że, ciemność zawsze napiera na światło.
+                    Magia zawsze żądała zapłaty.</p>
+
+                <p>Nora Roberts, Z krwi i kości.</p>
+
             </div>
-            <div class="col-lg-3 feature-box">
-                <i class="social-icon fab fa-youtube fa-8x"></i>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Oferta</h6>
+                <p>
+                    <a href="#!">Występy sceniczne</a>
+                </p>
+                <p>
+                    <a href="#!">Urodziny</a>
+                </p>
+                <p>
+                    <a href="#!">Wesela</a>
+                </p>
+                <p>
+                    <a href="#!">Występy plenerowe</a>
+                </p>
             </div>
-            <div class="col-lg-3 feature-box">
-                <i class="social-icon fab fa-instagram fa-8x"></i>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Przydatne linki</h6>
+                <p>
+                    <a href="#!">Kalendarz</a>
+                </p>
+                <p>
+                    <a href="#!">Blog</a>
+                </p>
+                <p>
+                    <a href="#!">Zdjęcia</a>
+                </p>
+                <p>
+                    <a href="#!">Formularz kontaktowy</a>
+                </p>
             </div>
-            <div class="col-lg-3 feature-box">
-                <i class="social-icon fas fa-envelope fa-8x"></i>
+
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Kontakt</h6>
+                <p>
+                    <i class="fas fa-home mr-3"></i> Częstochowa, Aleje Ujazdowskie 212, Polska</p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> blazej25@gmail.com</p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> +48 602 820 308</p>
+                <p>
+                    <i class="fas fa-print mr-3"></i> +48 602 820 308</p>
             </div>
+            <!-- Grid column -->
 
         </div>
-    </div>
+        <!-- Footer links -->
 
-    <h5>©2022 Błażej Stachura.</h5>
+        <hr>
+
+        <!-- Grid row -->
+        <div class="row d-flex align-items-center">
+
+            <!-- Grid column -->
+            <div class="col-md-7 col-lg-8">
+
+                <!--Copyright-->
+                <p class="text-center text-md-left">© 2022 Wszelkie prawa zastrzeżone:
+                    <a href="https://BlazejStachura.pl/">
+                        <strong> BłazejStachura.pl</strong>
+                    </a>
+                </p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-5 col-lg-4 ml-lg-0">
+
+                <!-- Social buttons -->
+                <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="social-icon fab fa-facebook fa-3x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="social-icon fab fa-youtube fa-3x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="social-icon fab fa-youtube fa-3x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="social-icon fas fa-envelope fa-3x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
     </div>
+    <!-- Footer Links -->
+
 </footer>
-
+<!-- Footer -->
 </body>
 </html>
