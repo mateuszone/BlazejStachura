@@ -1,4 +1,5 @@
 .idea
 venv
 /www/__pycache__/*
-/BlazejStachura/__pycache__/*
+/BlazejStachura/__pycache__/
+www/migrations/__pycache__/*
