@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from www.views import OfferPage, MainPage, CalendarPage, BlogPage, ContactPage
+from www.views import OfferPage, MainPage, BlogPage, ContactPage, \
+    CalendarView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MainPage.as_view(), name='Main'),
+    path('glowna/', MainPage.as_view(), name='Main'),
     path('oferta/', OfferPage.as_view(), name='Offer'),
-    path('kalendarz/', CalendarPage.as_view(), name='Calendar'),
+    path("kalendarz/", CalendarView.as_view(), name="calendar"),
     path('blog/', BlogPage.as_view(), name='Blog'),
     path('kontakt/', ContactPage.as_view(), name='Contact'),
 ]

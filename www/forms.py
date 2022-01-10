@@ -1,6 +1,6 @@
 from django import forms
 
-from www.models import Contact
+from www.models import Contact, Event
 
 
 class DateInput(forms.DateTimeInput):
@@ -8,12 +8,6 @@ class DateInput(forms.DateTimeInput):
 
 
 class ContactForm(forms.ModelForm):
-    # name = forms.CharField(label='imię', widget=forms.TextInput(attrs={'placeholder': 'Imię'}))
-    # email = forms.EmailField(label='email')
-    # phone = forms.IntegerField()
-    # place_of_performance = forms.CharField()
-    # date_of_performance = forms.DateTimeField()
-    # message = forms.TextInput()
 
     class Meta:
         model = Contact
@@ -31,3 +25,35 @@ class ContactForm(forms.ModelForm):
             'message': forms.Textarea(
                 attrs={'placeholder': 'Wiadomość'}),
         }
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ["title", "description", "start_time", "end_time"]
+        # datetime-local is a HTML5 input type
+        widgets = {
+            "title": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "Enter event title"}
+            ),
+            "description": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Enter event description",
+                }
+            ),
+            "start_time": DateInput(
+                attrs={"type": "datetime-local", "class": "form-control"},
+                format="%Y-%m-%dT%H:%M",
+            ),
+            "end_time": DateInput(
+                attrs={"type": "datetime-local", "class": "form-control"},
+                format="%Y-%m-%dT%H:%M",
+            ),
+        }
+        exclude = ["user"]
+
+    def __init__(self, *args, **kwargs):
+        super(EventForm, self).__init__(*args, **kwargs)
+        # input_formats to parse HTML5 datetime-local input to datetime field
+        self.fields["start_time"].input_formats = ("%Y-%m-%dT%H:%M",)
+        self.fields["end_time"].input_formats = ("%Y-%m-%dT%H:%M",)
