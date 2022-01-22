@@ -1,6 +1,7 @@
 from calendar import Calendar
 from datetime import timedelta, datetime, date
 import calendar
+from calendar import HTMLCalendar
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
@@ -15,6 +16,7 @@ from django.views.generic import CreateView, ListView
 from www.forms import ContactForm, EventForm
 from www.models import Event
 from www.utils import Calendar
+from datetime import datetime
 
 
 class MainPage(View):
@@ -34,7 +36,7 @@ class CalendarPage(View):
 
 class BlogPage(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'Blog.html')
+        return render(request, 'blog/base.html')
 
 
 class ContactPage(View):
@@ -97,7 +99,38 @@ class CalendarView(View):
         cal = Calendar(d.year, d.month)
         html_cal = cal.formatmonth(withyear=True)
         context = {}
-        context["calendar"] = mark_safe(html_cal)
+        context["calendar"] = html_cal
         context["prev_month"] = prev_month(d)
         context["next_month"] = next_month(d)
         return render(request, 'Kalendarz.html', context)
+
+
+# def home(request):
+#     now = datetime.now()
+#     current_year = now.year
+#     events = Event.objects.filter(
+#         start_time__year=self.year, start_time__month=self.month
+#     )
+#
+#     # Convert month from name to number
+#     month_number = list(calendar.month_name).index(month.title())
+#     month_number = int(month_number)
+#     # Create calendar
+#     cal = HTMLCalendar().formatmonth(
+#         year,
+#         month_number
+#     )
+#     # get current year
+#     now = datetime.now()
+#     current_year = now.year
+#
+#     # get current time
+#     time = now.strftime('%H:%M:%S')
+#     return render(request, "home.html", {"name": name,
+#                                          "year": year,
+#                                          "month": month,
+#                                          "month_number": month_number,
+#                                          "calendar": cal,
+#                                          "current_year": current_year,
+#                                          "time": time
+#                                          })

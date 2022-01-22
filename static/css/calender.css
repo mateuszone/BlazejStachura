@@ -1,17 +1,38 @@
+.test{
+          display:flex;
+          flex-flow: column;
+        }
+        .calendar{order: -1;}
+
+
 .calendar {
-    width: 98%;
+    width: 100%;
     margin: auto;
     font-size: 13px;
+    background-image: url("../images/lewitacja.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
   }
-
+.calendar::before {
+  content: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+}
   .calendar tr, .calendar td {
     border: 1px solid black;
+    color: floralwhite;
   }
 
   .calendar th {
     padding: 10px;
     text-align: center;
-    font-size: 18px;
+    font-size: 40px;
+    color: darkseagreen;
   }
 
   .calendar td {
@@ -19,18 +40,24 @@
     height: 150px;
     padding: 20px 0px 0px 5px;
   }
-
   .month {
-    font-size: 25px;
+    font-size: 200px;
+    color: red;
   }
 
   .date {
-    font-size: 16px;
+    font-size: 40px;
   }
-
   ul {
     height: 100%;
     padding: 0px 5px 0px 20px;
+    color: white;
+    text-align: center;
+    /*margin: 25px;*/
+    font-size: 18px;
+  }
+  .li {
+    /*padding: 20px;*/
   }
 
   a {
@@ -46,6 +73,8 @@
   }
 
   .btn {
+    margin-top: 50px;
+    margin-bottom: 50px;
     outline: none;
     color: black;
     background-color: transparent;

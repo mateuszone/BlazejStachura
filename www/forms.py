@@ -8,7 +8,6 @@ class DateInput(forms.DateTimeInput):
 
 
 class ContactForm(forms.ModelForm):
-
     class Meta:
         model = Contact
         fields = ('name', 'email', 'phone', 'place_of_performance', 'date_of_performance', 'message')
@@ -25,6 +24,7 @@ class ContactForm(forms.ModelForm):
             'message': forms.Textarea(
                 attrs={'placeholder': 'Wiadomość'}),
         }
+
 
 class EventForm(forms.ModelForm):
     class Meta:
@@ -57,3 +57,10 @@ class EventForm(forms.ModelForm):
         # input_formats to parse HTML5 datetime-local input to datetime field
         self.fields["start_time"].input_formats = ("%Y-%m-%dT%H:%M",)
         self.fields["end_time"].input_formats = ("%Y-%m-%dT%H:%M",)
+
+
+class EmailPostForm(forms.Form):
+    name = forms.CharField(max_length=25)
+    email = forms.EmailField()
+    to = forms.EmailField()
+    comments = forms.CharField(required=False, widget=forms.Textarea)

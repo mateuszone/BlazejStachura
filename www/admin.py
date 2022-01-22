@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from www import models
+from www.models import Contact
 
 
 @admin.register(models.Event)
@@ -16,3 +17,6 @@ class EventAdmin(admin.ModelAdmin):
     ]
     list_filter = ["is_active", "is_deleted"]
     search_fields = ["title"]
+
+
+admin.site.register(Contact)
