@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p$1kdl1mouhi_e37gf!cacv^_8&!4@&=fnyy7ao0i3$zz53zsj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # DEBUG = True
 
-ALLOWED_HOSTS = ['obscure-harbor-56904.herokuapp.com/','blazejstachura.pl','www.blazejstachura.pl']
+ALLOWED_HOSTS = ['127.0.0.1','blazejstachura.pl','www.blazejstachura.pl']
 
 # Application definition
 
